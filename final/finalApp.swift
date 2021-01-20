@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct finalApp: App {
+    let persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //PlayerDetailView(playerID: 123)
+            //PlayerList()
+            PadreView()
+            /*Myfavorite()*/.environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
